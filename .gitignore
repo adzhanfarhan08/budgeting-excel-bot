@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+venv/
+.env
+.env/
+.venv/
+
+# Excel/Data
+export/*.xlsx
+!export/.gitkeep  # Biarkan folder export tetap ada (tanpa file)
+
+# Telegram
+bot_token.txt
+config_secret.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistem
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
