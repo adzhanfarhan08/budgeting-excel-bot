@@ -6,15 +6,25 @@ from utils.excel import save_to_excel, export_data
 from config import logger
 
 
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    # Handler for command /start
+    help_text = """
+        Bot is Already Running 🖥
+        """
+
+    await update.message.reply_text(help_text, parse_mode="Markdown")
+
+
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    # Handler untuk command /help
+    # Handler for command /help
     help_text = """
         🛠 *Panduan Penggunaan Bot Budgeting* 🛠
-        
+
+        🤖 *Command*
         /start - Start Bot
         /help - Show guide
 
-        📝 *Format Input*:
+        📝 *Format Input*
         `<nama> <harga>`
         Contoh: `Buku 10000`
         """
@@ -68,6 +78,7 @@ async def export_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 # Export handlers
 handlers = [
+    CommandHandler("start", start),
     CommandHandler("help", help),
     CommandHandler("export", export_command),
     MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message),
